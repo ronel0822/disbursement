@@ -1,0 +1,40 @@
+body{
+	background-color: #003366;
+}
+
+.form-container{
+	border: 1px solid black;
+	padding: 15px;
+	margin-top: 50px;
+}
+
+ .wrapper{
+                    margin:50px 10px 10px 10px;
+            }
+
+            .form-signin{
+                    max-width: 380px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    padding: 15px 40px 50px;
+                    border: 1px solid #e5e5e5;
+                    border-radius: 10px;
+                    border-top: 3px solid #003fa7;
+            }
+
+            .form-signin .form-signin-heading, .form-control{
+                    margin-bottom: 30px;
+            }
+            
+            .submit{
+                background-color: #1abc9c;
+                color: white;
+            }
+            
+            .textlogo{
+                color: #1abc9c;
+            }
+
+            .login{
+            	background-color: #003366;
+            }
