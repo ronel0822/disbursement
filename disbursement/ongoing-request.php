@@ -63,7 +63,12 @@
 					<th scope="row"><?php echo $count; ?></th>
 					<td><?php echo $row["payable_id"]; ?></td>
 					<td><?php echo $row["payee"]; ?></td>
-					<td><?php echo $row["description"]; ?></td>
+					<td style="max-width: 100px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;">
+                                <?php echo $row["description"]; ?>
+                    </td>
 					<td>PHP&nbsp;<?php echo number_format($row["amount"],2); ?></td>
 					<td><a href="ongoing-request-view.php?id=<?php echo $row[0]; ?>" style="text-decoration:none;" title="View"><i class="far fa-eye"></i></a></td>
 				</tr>
