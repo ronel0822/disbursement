@@ -59,6 +59,8 @@
 
 <div class="container">
     <hr>
+        <span><strong>Voucher Type :</strong>&nbsp;<?php echo $row['voucher_type']; ?> Voucher</span> 
+    <hr>
     <p><strong>Description:</strong></p>
     <p>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo $row["description"]; ?></p><br>
     <hr>
