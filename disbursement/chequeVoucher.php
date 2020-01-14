@@ -3,7 +3,7 @@
 if(isset($_POST['generateVoucher'])){
 $chequeID = $_POST['chequeID'];
 $description = $_POST['description'];
-$amount = $_POST['amount'];
+$amount = floatval($_POST['amount']);
 $preparedBy = $_POST['preparedBy'];
 $date = date("Y/m/d");
 $payee = $_POST['payee'];
@@ -32,18 +32,26 @@ $pdf->Cell(189  ,5,'',0,1);
 
 $pdf->SetFont('Arial','','12');
 $pdf->Cell(10,0,'',0,0);
-$pdf->Cell(130,6, 'Cheque #: '.$chequeID,0,'L');
+$pdf->Cell(22,6, 'Cheque # : ',0,'L');
+$pdf->SetFont('Courier','','');
+$pdf->Cell(130,6,$chequeID,0,'L');
 $pdf->Cell(0,6,'',0,True,'L');
 $pdf->cell(50 , 7,'',0,1);
 
 $pdf->SetFont('Arial','','12');
 $pdf->Cell(10,0,'',0,0);
-$pdf->Cell(130,6, 'Pay To: '.$payee,0,'L');
-$pdf->Cell(0,6,'Date: '.$date,0,True,'L');
-$pdf->cell(50 ,2,'',0,1);
+$pdf->Cell(16,6, 'Pay To: ',0,'L');
+$pdf->SetFont('Courier','','');
+$pdf->Cell(115,6,$payee,0,'L');
+$pdf->SetFont('arial','','');
+$pdf->Cell(12,6,'Date: ',0,'L');
+$pdf->SetFont('Courier','','');
+$pdf->Cell(0,6,$date,0,'L');
+$pdf->cell(50 ,8,'',0,1);
 
 
 $pdf->Cell(2 ,0 ,'',1,True,'C');
+$pdf->SetFont('Arial','','');
 $pdf->Cell(120 ,6 ,'DESCRIPTION',1,0,'C');
 
 $pdf->Cell(70,6 , 'AMOUNT', 1,True,'C');
@@ -59,8 +67,10 @@ $pdf->Cell(70   ,6, 'Php '.number_format($amount,2), 1,1);//endline
 $pdf->SetFont('Arial','','12');
 $pdf->Cell(0  ,8,'',0,1);
 
-$pdf->SetFont('Courier','B','');
-$pdf->Cell(0,-2,'TOTAL SUM OF PESOS:   '.number_format($amount,2),0,0,'L');
+
+$pdf->Cell(50,0,'TOTAL SUM OF PESOS:   ',0,0,'L');
+$pdf->SetFont('Courier','B','16');
+$pdf->Cell(0,0,number_format($amount,2),0,'L');
 $pdf->Cell(0,0,'',0,1);
 
 $pdf->SetFont('Arial','B','12');

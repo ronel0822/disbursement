@@ -59,12 +59,14 @@
 
 <div class="container">
     <hr>
+        <span><strong>Voucher Type :</strong>&nbsp;<?php echo $row['voucher_type']; ?> Voucher</span> 
+    <hr>
     <p><strong>Description:</strong></p>
     <p>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo $row["description"]; ?></p><br>
     <hr>
     <center>
     <!-- <small></small>  -->
-    <embed src="../Storage/Disbursement/<?php echo $row['voucher_file'] ?>" type="application/pdf" height="800px" width="80%"/>
+    <embed src="../Storage/Disbursement/<?php echo $row['voucher_file'] ?>" type="application/pdf" height="500px" width="80%"/>
     </center>
 </div>
 

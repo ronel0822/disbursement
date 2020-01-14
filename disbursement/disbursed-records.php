@@ -31,6 +31,7 @@
 					<th scope="col">Disbursed ID</th>
 					<th scope="col">Payee</th>
 					<th scope="col">Description</th>
+					<th scope="col">Voucher Type</th>
 					<th scope="col">Amount</th>
 					<th scope="col">Action</th>
 				</tr>
@@ -43,7 +44,13 @@
 					<th scope="row"><?php echo $count; ?></th>
 					<td><?php echo $row[0]; ?></td>
 					<td><?php echo $row["payee"]; ?></td>
-					<td><?php echo $row["description"]; ?></td>
+					<td style="max-width: 100px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;">
+                                <?php echo $row["description"]; ?>
+                    </td>
+                    <td><?php echo $row['voucher_type']; ?> Voucher</td>
 					<td>PHP&nbsp;<?php echo number_format($row["amount"],2); ?></td>
 					<td><a href="disbursed-record-view.php?id=<?php echo $row[0]; ?>" style="text-decoration:none;" title="View"><i class="far fa-eye"></i></a></td>
 				</tr>

@@ -54,7 +54,7 @@
                 		$transactionCount+=$row['voucher_count'];
             	?>
 					<div class="card-body">
-						<p><?php echo ucfirst($row['voucher_type']); ?> Voucher : <?php echo $row['voucher_count']; ?></p>
+						<p><?php echo ucfirst($row['voucher_type']); ?> Voucher : <strong><?php echo $row['voucher_count']; ?></strong></p>
 						<?php while ($row2 = $daily->fetch()) {
 							$transactionCount+=$row2['voucher_count'];
 							?>
@@ -80,7 +80,7 @@
                 		$transactionCount+=$row['voucher_count'];
 	            	?>
 						<div class="card-body">
-							<p><?php echo ucfirst($row['voucher_type']); ?> Voucher : <?php echo $row['voucher_count']; ?></p>
+							<p><?php echo ucfirst($row['voucher_type']); ?> Voucher : <strong><?php echo $row['voucher_count']; ?></strong></p>
 							<?php while ($row2 = $weekly->fetch()) {
 								$transactionCount+=$row2['voucher_count'];
 								?>
@@ -105,11 +105,11 @@
                 		$transactionCount+=$row['voucher_count'];
             	?>
 					<div class="card-body">
-						<p><?php echo ucfirst($row['voucher_type']); ?> Voucher : <?php echo $row['voucher_count']; ?></p>
+						<p><?php echo ucfirst($row['voucher_type']); ?> Voucher : <strong><?php echo $row['voucher_count']; ?></strong></p>
 						<?php while ($row2 = $monthly->fetch()) {
 							$transactionCount+=$row2['voucher_count'];
 							?>
-								<p><?php echo ucfirst($row2['voucher_type']); ?> Voucher : <?php echo $row2['voucher_count']; ?></p>
+								<p><?php echo ucfirst($row2['voucher_type']); ?> Voucher :<strong><?php echo $row2['voucher_count']; ?></strong></p>
 							<?php
 						} ?>
 					</div>
@@ -126,9 +126,12 @@
                   <i class="fas fa-users"></i> Other Information
                 </div>
                 <div class="card-body">
-             		<h4 class="card-title text-center">Request : <?php echo $otherInformation['request']; ?></h4>
-             		<h4 class="card-title text-center">Ongoing : <?php echo $otherInformation['ongoing']; ?></h4>
-             		<h4 class="card-title text-center">Disbursed : <?php echo $otherInformation['disbursed']; ?></h4>
+             		<h4 class="card-title text-center" style="font-size: 16px;">Request : 
+                  <strong><?php echo $otherInformation['request']; ?></strong></h4>
+             		<h4 class="card-title text-center" style="font-size: 16px;">Ongoing : 
+                  <strong><?php echo $otherInformation['ongoing']; ?></strong></h4>
+             		<h4 class="card-title text-center" style="font-size: 16px;">Disbursed : 
+                  <strong><?php echo $otherInformation['disbursed']; ?></strong></h4>
                 </div>
               </div>
              </div>

@@ -41,8 +41,20 @@
                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#accept" style="float:right;">
                 <i class="fas fa-check"></i> Accept
                 </button>
-                <?php if($row['voucher_type'] = "Cash"){ ?>
-                <form action="pettyCash.php" method="POST" target="_blank">
+
+                <?php
+                    $voucherType = "";
+                    if($row['voucher_type'] == 'Cash'){
+                        $voucherType = "cashVoucher.php";
+                    }else if($row['voucher_type'] == 'Petty Cash'){
+                        $voucherType = "pettyCash.php";
+                    }else if($row['voucher_type'] == 'Cheque'){
+                        $voucherType = "chequeVoucher.php";
+                    }
+
+                ?>
+
+                <form action=" <?php echo $voucherType; ?>" method="POST" target="_blank">
                     <input type="hidden" name="chequeID" value="<?php echo $row[0]; ?>">
                     <input type="hidden" name="payee" value="<?php echo $row['payee']; ?>">
                     <input type="hidden" name="preparedBy" value="<?php echo $row['prepared_by']; ?>">
@@ -50,9 +62,6 @@
                     <input type="hidden" name="description" value="<?php echo $row['description']; ?>">
                     <button type="submit" name="generateVoucher" style="float:right;margin-right:10px;" class="btn btn-primary btn-sm"><i class="fas fa-file-invoice"></i> Voucher</button>
                 </form>
-                <?php 
-                    }
-                ?>
             </div>
         </div>
         <div class="row">
@@ -71,6 +80,7 @@
                 ?>
             </div>
             <div class="col">
+
     
             </div>
         </div>
@@ -78,7 +88,9 @@
 
 <div class="container">
     <hr>
-    <label><b>Description:</b></label>
+    &nbsp;<span><b>Voucher Type :</b>&emsp;<?php echo $row['voucher_type']; ?> Voucher</span>
+    <hr>
+    &nbsp;<span><b>Description:</b></span>
     <p>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo $row["description"]; ?></p><br>
     <hr>
     <center>
