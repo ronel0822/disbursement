@@ -64,7 +64,7 @@
     <hr>
     <center>
     <!-- <small></small>  -->
-    <embed src="../Storage/Disbursement/<?php echo $row['voucher_file'] ?>" type="application/pdf" height="800px" width="80%"/>
+    <embed src="../Storage/Disbursement/<?php echo $row['voucher_file'] ?>" type="application/pdf" height="500px" width="80%"/>
     </center>
 </div>
 

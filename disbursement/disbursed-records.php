@@ -47,7 +47,8 @@
                                 white-space: nowrap;
                                 overflow: hidden;
                                 text-overflow: ellipsis;">
-                                <?php echo $row["description"]; ?></td>
+                                <?php echo $row["description"]; ?>
+                    </td>
 					<td>PHP&nbsp;<?php echo number_format($row["amount"],2); ?></td>
 					<td><a href="disbursed-record-view.php?id=<?php echo $row[0]; ?>" style="text-decoration:none;" title="View"><i class="far fa-eye"></i></a></td>
 				</tr>
