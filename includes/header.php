@@ -1,18 +1,17 @@
 <?php
 	session_start();
-  include '../class/db.php';
-  include '../class/controller.php';
-  include '../class/view.php';
-  if(!isset($_SESSION['username'])){
-	  $_SESSION['message'] = "required to login";
-	  header('location:test.php');
-  }
+	include '../class/db.php';
+	include '../class/controller.php';
+	include '../class/view.php';
+	if(!isset($_SESSION['username'])){
+		$_SESSION['message'] = "Required to login";
+		header('location:test.php');
+	}
 
-  if(isset($_GET['logout'])){
-	  session_destroy();
-	  session_start();
-	  header("location:test.php");
-  }
+	if(isset($_GET['logout'])){
+		session_destroy();
+		header("location:test.php");
+	}
 ?>
 
 <!DOCTYPE html>
