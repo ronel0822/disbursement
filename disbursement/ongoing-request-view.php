@@ -25,6 +25,19 @@
 	  </div>
 	  <div class="card-body">
 
+        <?php 
+            if(isset($_POST['changeVoucher'])){
+                if($object->viewChangeVoucherType($_POST['voucherType'],$_GET['id'])){
+        ?>
+                    <div class="alert alert-success">
+                        <span>Change voucher type Success!</span>
+                    </div>
+        <?php
+                    $statement = $object->viewOngoingView($_GET["id"]);
+                }
+            }
+        ?>
+
 <?php   if ($row = $statement->fetch()) { ?>
 	  	<!---insert transaction here--->
       <div class="row">
@@ -88,7 +101,7 @@
 
 <div class="container">
     <hr>
-    &nbsp;<span><b>Voucher Type :</b>&emsp;<?php echo $row['voucher_type']; ?> Voucher</span>
+    &nbsp;<span><b>Voucher Type :</b>&emsp;<?php echo $row['voucher_type']; ?> Voucher &emsp;<a href="#" data-toggle="modal" data-target="#changeDisburseType">Click Here to change voucher type.</a></span>
     <hr>
     &nbsp;<span><b>Description:</b></span>
     <p>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo $row["description"]; ?></p><br>
@@ -138,6 +151,36 @@
           </div>
   </div>
 </form>
+
+
+<form action="ongoing-request-view.php?id=<?php echo $_GET['id']; ?>" method="POST">
+  <div class="modal" tabindex="-1" role="dialog" id="changeDisburseType">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Change Disburse Type to</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <select name="voucherType" class="form-control">
+                  <option value="Cash">Cash</option>
+                  <option value="Petty Cash">Petty Cash</option>
+                  <option value="Cheque">Cheque</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" name="changeVoucher" class="btn btn-success" onclick="return confirm('Are you sure?')">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+          </div>
+  </div>
+</form>
+
 
 <?php 
     include '../includes/footer.php';

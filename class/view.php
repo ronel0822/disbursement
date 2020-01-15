@@ -92,6 +92,11 @@ class View extends Controller {
 		$a_date = $string;
 		return date("Y-m-t", strtotime($a_date));
 	}
+
+	public function viewChangeVoucherType($voucher,$id){
+		return $this->getChangeVoucherType($voucher,$id);
+	}
+
 }
 
 ?>

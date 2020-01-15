@@ -262,4 +262,17 @@ class Controller extends Db {
 		return $stmt;
 	}
 
+
+	//Change Voucher Type
+	protected function getChangeVoucherType($voucher,$id){
+		$stmt = $this->connect()->prepare("UPDATE finance_disburse SET voucher_type=? WHERE id = ?");
+		$stmt->bindParam(1,$voucher);
+		$stmt->bindParam(2,$id);
+		if($stmt->execute()){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 }
