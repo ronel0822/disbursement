@@ -5,12 +5,12 @@
 	include '../class/view.php';
 	if(!isset($_SESSION['username'])){
 		$_SESSION['message'] = "Required to login";
-		header('location:test.php');
+		header('location:login.php');
 	}
 
 	if(isset($_GET['logout'])){
 		session_destroy();
-		header("location:test.php");
+		header("location:login.php");
 	}
 ?>
 
