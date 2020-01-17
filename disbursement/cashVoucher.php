@@ -50,7 +50,7 @@ $pdf->SetFont('','I','');
 $pdf->Cell(100,5,$chequeID,0,1);
 
 $pdf->Cell(189  ,5,'',0,1);
-
+$pdf->SetFont('','','');
 $pdf->Cell(30  ,5, 'To Whom Paid: ', 0,0);
 $pdf->SetFont('','I','');
 $pdf->Cell(85,5,ucfirst($payee),0,0);

@@ -9,10 +9,10 @@ class Db {
 	private $charset;
 
 	protected function connect() {
-		$this->servername = "OCAMPO-PC\SQLEXPRESS";
+		$this->servername = "DESKTOP-7EL2D8S\SQLEXPRESS";
 		$this->username = "ronel";
 		$this->password = "ronel";
-		$this->dbName = "disburse";
+		$this->dbName = "database";
 
 		try {
 			$dsn = "sqlsrv:Server=".$this->servername.";Database=".$this->dbName;
