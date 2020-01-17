@@ -42,7 +42,7 @@
 		include'../class/auth.php';
 
 		$object = new Auth;
-		if(isset($_SESSION['username'])){
+	if(isset($_SESSION['username'])){
 			header('location:index.php');
 		}
 		if(isset($_POST['login'])){

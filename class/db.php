@@ -12,7 +12,7 @@ class Db {
 		$this->servername = "DESKTOP-7EL2D8S\SQLEXPRESS";
 		$this->username = "ronel";
 		$this->password = "ronel";
-		$this->dbName = "database";
+		$this->dbName = "disbursement";
 
 		try {
 			$dsn = "sqlsrv:Server=".$this->servername.";Database=".$this->dbName;

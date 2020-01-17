@@ -179,7 +179,7 @@ class Controller extends Db {
 		$query = "SELECT * FROM accounts WHERE username=? AND password=?";
 		$pst = $this->connect()->prepare($query);
 		$pst->bindParam(1,$username);
-		$pst->bindParam(2,$password);
+		$pst->bindParam(2,$payables_idsword);
 		$pst->execute();
 		if($pst->rowCount() != 0){
 			if($row = $pst->fetch()) {
